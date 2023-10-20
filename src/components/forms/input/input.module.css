@@ -1,0 +1,47 @@
+.input {
+  padding-top: 10px;
+  position: relative;
+}
+
+.input > input {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.error {
+  background-color: #d7752138;
+}
+
+.label {
+  margin-top: 40px;
+  vertical-align: middle;
+  margin-bottom: 4px;
+  display: inline-block;
+}
+
+.spacer {
+  margin-top: 40px;
+  display: inline-block;
+}
+
+.warn {
+  color: white;
+  margin: 0 0 5px 0;
+  background: #d0393e;
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.warn::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #d0393e transparent transparent transparent;
+}
