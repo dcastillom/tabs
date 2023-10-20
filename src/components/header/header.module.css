@@ -1,0 +1,10 @@
+.header {
+  display: grid;
+}
+
+.searchForm {
+  display: grid;
+  place-self: center;
+  text-align: left;
+  min-width: 275px;
+}
