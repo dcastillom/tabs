@@ -1,0 +1,16 @@
+.logoContainer {
+  float: left;
+  cursor: default;
+}
+
+.title {
+  margin: 0;
+}
+
+.logo {
+  display: inline-block;
+  height: 100px;
+  width: 62px;
+  background-image: url("./logo.svg");
+  cursor: pointer;
+}
