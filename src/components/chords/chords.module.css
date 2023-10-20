@@ -1,0 +1,26 @@
+.chords {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.main {
+  display: flex;
+  width: 100%;
+}
+
+.searchSomething {
+  padding-top: 5px;
+  text-align: center;
+  width: 100%;
+}
+
+.noResults {
+  padding-top: 5px;
+  text-align: center;
+  width: 100%;
+}
+
+.noChords {
+  display: inline-block;
+}
