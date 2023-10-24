@@ -1,12 +1,15 @@
 import { useEffect } from 'react';
-import { CONSTANTS } from '@constants';
+
 import { useSearchChordsDrawChord } from '@hooks';
-import styles from './chord.module.css';
+import { LABELS } from '@translations';
+
 import { setChordName } from './chord.utils';
+
+import styles from './chord.module.css';
 
 export function Chord({ chord }) {
   const { chordName, strings, voicingID } = { ...chord };
-  const selector = `${CONSTANTS.chord}${voicingID}`;
+  const selector = `${LABELS.chord}${voicingID}`;
   const { drawChord } = useSearchChordsDrawChord(selector, chord);
 
   useEffect(() => {

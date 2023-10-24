@@ -8,6 +8,10 @@ COMMITS
 - https://typicode.github.io/husky/
 - https://commitlint.js.org/#/
 
+TRANSLATIONS
+
+- https://react.i18next.com/guides/quick-start
+
 TESTS
 
 - https://vitest.dev/

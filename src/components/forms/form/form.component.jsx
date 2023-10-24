@@ -1,4 +1,7 @@
 import { useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+
+import { LABELS } from '@translations';
 
 export function Form(props) {
   const {
@@ -13,6 +16,7 @@ export function Form(props) {
   } = props;
   const ref = useRef(false);
   const isDirty = useRef(false);
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({});
   const { errors } = validator(formData, isDirty?.current, setErrorsCallback);
 
@@ -41,7 +45,11 @@ export function Form(props) {
         onSubmit={handleSubmit}
       >
         {children}
-        <input type="submit" disabled={errors.hasErrors} />
+        <input
+          type="submit"
+          value={t(LABELS.submit)}
+          disabled={errors.hasErrors}
+        />
       </form>
     </>
   );

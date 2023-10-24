@@ -1,8 +1,10 @@
 import { render, screen } from '@testing-library/react';
+
 import { Chord } from './chord.component';
 import mock from './chord.mock.json';
-import styles from './chord.module.css';
 import { setChordName } from './chord.utils';
+
+import styles from './chord.module.css';
 
 describe('Chord', () => {
   it('renders', async () => {

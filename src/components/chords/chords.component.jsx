@@ -1,7 +1,10 @@
 import { useContext } from 'react';
+import { useTranslation } from 'react-i18next';
+
 import { Chord } from '@components';
 import { SearchChordsContext } from '@contexts';
-import { TRANSLATIONS } from '@translations';
+import { LABELS } from '@translations';
+
 import styles from './chords.module.css';
 
 export function Chords({ chords }) {
@@ -15,10 +18,11 @@ export function Chords({ chords }) {
 }
 
 export function NoChords() {
+  const { t } = useTranslation();
   const { searchChordsIsDirty } = { ...useContext(SearchChordsContext) };
   const isDirty = searchChordsIsDirty?.current;
   const className = isDirty ? styles.noResults : styles.searchSomething;
-  const label = isDirty ? TRANSLATIONS.noResults : TRANSLATIONS.searchSomething;
+  const label = isDirty ? t(LABELS.noResults) : t(LABELS.searchSomething);
   return <div className={className}>{label}</div>;
 }
 

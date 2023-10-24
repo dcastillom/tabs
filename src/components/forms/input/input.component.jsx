@@ -1,9 +1,12 @@
 import { useState } from 'react';
-import { CONSTANTS } from '@constants';
-import { TRANSLATIONS } from '@translations';
+import { useTranslation } from 'react-i18next';
+
+import { LABELS } from '@translations';
+
 import styles from './input.module.css';
 
 export function Input({ type = 'text', name = '', error = '', label = true }) {
+  const { t } = useTranslation();
   const [isDirty, setIsDirty] = useState(false);
   const hasError = isDirty && error;
   return (
@@ -11,7 +14,7 @@ export function Input({ type = 'text', name = '', error = '', label = true }) {
       {hasError && <p className={styles.warn}>{error}</p>}
       {label && (
         <label className={styles.label} htmlFor={name}>
-          {TRANSLATIONS[`${name}${CONSTANTS.label}`]}
+          {t([`${name}${LABELS.label}`])}
         </label>
       )}
       {!label && <span className={styles.spacer} />}
@@ -20,7 +23,7 @@ export function Input({ type = 'text', name = '', error = '', label = true }) {
         type={type}
         name={name}
         className={error.length && isDirty ? styles.error : null}
-        placeholder={TRANSLATIONS[`${name}${CONSTANTS.placeholder}`]}
+        placeholder={t([`${name}${LABELS.placeholder}`])}
       />
     </div>
   );

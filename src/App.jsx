@@ -1,4 +1,5 @@
 import React, { useMemo, useRef, useState } from 'react';
+
 import { SearchChordsHeader, SearchChordsResults } from '@components';
 import { SearchChordsContext } from '@contexts';
 

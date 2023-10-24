@@ -1,10 +1,11 @@
 import { useContext, useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { SVGuitarChord } from 'svguitar';
-import { CONSTANTS } from '@constants';
+
 import { SearchChordsContext } from '@contexts';
 import { CHORD_PATTERN } from '@regExp';
 import { searchChords } from '@services';
-import { TRANSLATIONS } from '@translations';
+import { LABELS } from '@translations';
 
 export const useSearchChords = () => {
   const { setChords } = useContext(SearchChordsContext);
@@ -23,15 +24,16 @@ export const useSearchChordsFormValidator = (
 ) => {
   const chordsPattern = new RegExp(CHORD_PATTERN);
   const [errors, setErrors] = useState({});
-  const searchConstant = CONSTANTS.search;
+  const searchConstant = LABELS.search;
   const searchData = formData[searchConstant];
+  const { t } = useTranslation();
   useEffect(() => {
     const err = {};
     if (isDirty && !searchData?.length) {
-      err[searchConstant] = TRANSLATIONS.emptySearch;
+      err[searchConstant] = t(LABELS.emptySearch);
     }
     if (isDirty && searchData?.length && !chordsPattern.test(searchData)) {
-      err[searchConstant] = TRANSLATIONS.wrongChordsPattern;
+      err[searchConstant] = t(LABELS.wrongChordsPattern);
     }
     err.hasErrors = Object.keys(err).length > 0;
     setErrors(err);
@@ -73,7 +75,7 @@ export const useSearchChordsDrawChord = (selector, chord = {}) => {
           })
           .draw();
       } catch (e) {
-        console.error(CONSTANTS.noDrawChord);
+        console.error(LABELS.noDrawChord);
       }
       hasImg.current = true;
     }

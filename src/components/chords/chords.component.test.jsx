@@ -1,11 +1,14 @@
+import noResults from '@services/mocks/withNoResults.json';
+import results from '@services/mocks/withResults.json';
 import { render, screen } from '@testing-library/react';
+import { LABELS, TRANSLATIONS } from '@translations';
+import { lng } from '@translations/i18n';
+
 import { SearchChordsResults } from './chords.component';
-import noResults from '../../services/mocks/withNoResults.json';
-import results from '../../services/mocks/withResults.json';
-import { TRANSLATIONS } from '../../translations/constants';
 
 describe('Chords', () => {
-  const { searchSomething } = TRANSLATIONS;
+  const searchSomething = TRANSLATIONS[lng][LABELS.searchSomething];
+
   const renderComponent = (mock) =>
     render(<SearchChordsResults chords={mock} />);
   it('search chords', async () => {

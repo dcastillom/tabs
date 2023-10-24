@@ -1,11 +1,13 @@
 import { useState } from 'react';
+
 import { Form, Input, Logo } from '@components';
-import { CONSTANTS } from '@constants';
 import { useSearchChords, useSearchChordsFormValidator } from '@hooks';
+import { LABELS } from '@translations';
+
 import styles from './header.module.css';
 
 export function SearchChordsHeader() {
-  const { search: searchId } = CONSTANTS;
+  const { search: searchId } = LABELS;
   const { getChords } = useSearchChords();
   const [searchErrors, setSearchErrors] = useState({});
 

@@ -20,8 +20,29 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', 'prettier'],
+  plugins: ['react', 'prettier', "simple-import-sort"],
   rules: {
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [
+          // React first, then packages starting with a character
+          ["^react$", "^[a-z]"],
+          // Packages starting with `@`
+          ["^@"],
+          // Packages starting with `~`
+          ["^~"],
+          // Imports starting with `../`
+          ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+          // Imports starting with `./`
+          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+          // Style imports
+          ["^.+\\.s?css$"],
+          // Side effect imports
+          ["^\\u0000"]
+        ]
+      }
+    ],
     'prettier/prettier': [
       'error',
       {
@@ -35,4 +56,5 @@ module.exports = {
     'linebreak-style': ['error', 'unix'],
     'react/prop-types': 'off',
   },
+
 };
