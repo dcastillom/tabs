@@ -1,7 +1,7 @@
 import noResults from '@services/mocks/withNoResults.json';
 import results from '@services/mocks/withResults.json';
 import { render, screen } from '@testing-library/react';
-import { labels, translations, defaultLng } from '@translations';
+import { defaultLng, labels, translations } from '@translations';
 
 import { SearchChordsResults } from './chords.component';
 

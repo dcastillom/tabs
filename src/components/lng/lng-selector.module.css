@@ -1,0 +1,14 @@
+.lngContainer {
+  margin: 0 6px;
+}
+
+.lng {
+  cursor: pointer;
+  margin-right: 6px;
+  display: inline;
+  color: #d0393e;
+}
+
+.lng:last-of-type {
+  margin-right: 0;
+}

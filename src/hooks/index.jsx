@@ -5,7 +5,7 @@ import { SVGuitarChord } from 'svguitar';
 import { SearchChordsContext } from '@contexts';
 import { CHORD_PATTERN } from '@regExp';
 import { searchChords } from '@services';
-import { labels } from '@translations';
+import { labels, lng } from '@translations';
 
 export const useSearchChords = () => {
   const { setChords } = useContext(SearchChordsContext);
@@ -15,6 +15,28 @@ export const useSearchChords = () => {
     });
   };
   return { getChords };
+};
+
+export const useResetApp = () => {
+  const { setChords, setVisible } = useContext(SearchChordsContext);
+  const resetApp = () => {
+    setChords([]);
+    setVisible(false);
+    setTimeout(() => setVisible(true), 0);
+  };
+  return { resetApp };
+};
+
+export const useChangeLng = () => {
+  const { i18n } = useTranslation();
+  const { resetApp } = useResetApp();
+  const changeLng = (_lng) => {
+    localStorage.setItem(lng, _lng);
+    i18n.changeLanguage(_lng);
+    resetApp();
+  };
+  const currentLng = i18n.language;
+  return { changeLng, currentLng };
 };
 
 export const useSearchChordsFormValidator = (

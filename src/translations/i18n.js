@@ -1,11 +1,12 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
+export const lng = 'lng';
 export const lngs = {
   en: 'en',
-  es: 'es'
-}
-export const defaultLng = lngs.en;
+  es: 'es',
+};
+export const defaultLng = localStorage.getItem(lng) || lngs.en;
 
 export const labels = {
   chord: 'chord',

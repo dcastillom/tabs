@@ -13,6 +13,7 @@ export default defineConfig({
       '@hooks': path.resolve(__dirname, './src/hooks'),
       '@translations': path.resolve(__dirname, './src/translations'),
       '@regExp': path.resolve(__dirname, './src/regExp'),
+      '@colors': path.resolve(__dirname, './src/colors'),
     },
   },
   plugins: [react()],
