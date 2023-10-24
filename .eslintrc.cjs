@@ -2,92 +2,31 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    jest: true,
   },
-  extends: "airbnb",
+  extends: ['eslint:recommended', 'plugin:react/recommended'],
   overrides: [
     {
       env: {
         node: true,
       },
-      files: [".eslintrc.{js,cjs}"],
+      files: ['.eslintrc.{js,cjs}'],
       parserOptions: {
-        sourceType: "script",
+        sourceType: 'script',
       },
     },
   ],
-  settings: {
-    "import/resolver": {
-      "eslint-import-resolver-custom-alias": {
-        "alias": {
-          "@": "./src",
-          "@components": "./src/components",
-          "@contexts": "./src/contexts",
-          "@services": "./src/services",
-          "@hooks": "./src/hooks",
-          "@translations": "./src/translations",
-          "@constants": "./src/constants",
-          "@regExp": "./src/regExp",
-        },
-        extensions: [".js", ".jsx"],
-        packages: [
-          "packages/*"
-        ]
-      }
-    }
-  },
   parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
+    ecmaVersion: 'latest',
+    sourceType: 'module',
   },
+  plugins: ['react', 'prettier'],
   rules: {
-    "import/no-unresolved": ["error", { commonjs: true }],
-    'prefer-destructuring': 'off',
-    'no-restricted-syntax': 'off',
-    'import/no-cycle': 'off',
-    'jsx-a11y/anchor-is-valid': 0,
+    indent: ['error', 2],
+    semi: ['error', 'always'],
+    'prettier/prettier': 'error',
     'react/react-in-jsx-scope': 'off',
-    'no-console': 'off',
-    'import/prefer-default-export': 'off',
+    'linebreak-style': ['error', 'unix'],
     'react/prop-types': 'off',
-    'no-useless-escape': 'off',
-    'sort-imports': ['error', {ignoreCase: true, ignoreDeclarationSort: true}],
-    'import/order': [
-      'error',
-      {
-        groups: [
-          ['external', 'builtin'],
-          'internal',
-          ['sibling', 'parent'],
-          'index',
-        ],
-        pathGroups: [
-          {
-            pattern: '@(react|react-native)',
-            group: 'external',
-            position: 'before',
-          },
-          {
-            pattern: '@src/**',
-            group: 'internal',
-          },
-        ],
-        pathGroupsExcludedImportTypes: ['internal', 'react'],
-        'newlines-between': 'never',
-        alphabetize: {
-          order: 'asc',
-          caseInsensitive: true,
-        },
-      },
-    ],
   },
-  overrides: [
-    {
-    files: [
-        "**/*.test.jsx",
-      ],
-      env: {
-        "jest": true
-      }
-    }
-  ]
 };

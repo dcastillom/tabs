@@ -11,6 +11,6 @@
   display: inline-block;
   height: 100px;
   width: 62px;
-  background-image: url("./logo.svg");
+  background-image: url('./logo.svg');
   cursor: pointer;
 }

@@ -20,7 +20,6 @@ export function Form(props) {
     event.preventDefault();
     onSubmit(formData);
   };
-
   const handleChange = () => {
     isDirty.current = true;
     const data = {};
