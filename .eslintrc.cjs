@@ -22,9 +22,15 @@ module.exports = {
   },
   plugins: ['react', 'prettier'],
   rules: {
+    'prettier/prettier': [
+      'error',
+      {
+        singleQuote: true,
+        semi: true,
+      }
+    ],
     indent: ['error', 2],
     semi: ['error', 'always'],
-    'prettier/prettier': 'error',
     'react/react-in-jsx-scope': 'off',
     'linebreak-style': ['error', 'unix'],
     'react/prop-types': 'off',
