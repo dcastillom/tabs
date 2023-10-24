@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { Form, Input, Logo } from "@components";
-import { CONSTANTS } from "@constants";
-import { useSearchChords, useSearchChordsFormValidator } from "@hooks";
-import styles from "./header.module.css";
+import { useState } from 'react';
+import { Form, Input, Logo } from '@components';
+import { CONSTANTS } from '@constants';
+import { useSearchChords, useSearchChordsFormValidator } from '@hooks';
+import styles from './header.module.css';
 
 export function SearchChordsHeader() {
   const { search: searchId } = CONSTANTS;

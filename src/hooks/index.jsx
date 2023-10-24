@@ -1,10 +1,10 @@
-import { useContext, useEffect, useRef, useState } from "react";
-import { SVGuitarChord } from "svguitar";
-import { CONSTANTS } from "@constants";
-import { SearchChordsContext } from "@contexts";
-import { CHORD_PATTERN } from "@regExp";
-import { searchChords } from "@services";
-import { TRANSLATIONS } from "@translations";
+import { useContext, useEffect, useRef, useState } from 'react';
+import { SVGuitarChord } from 'svguitar';
+import { CONSTANTS } from '@constants';
+import { SearchChordsContext } from '@contexts';
+import { CHORD_PATTERN } from '@regExp';
+import { searchChords } from '@services';
+import { TRANSLATIONS } from '@translations';
 
 export const useSearchChords = () => {
   const { setChords } = useContext(SearchChordsContext);
@@ -44,7 +44,7 @@ export const useSearchChordsDrawChord = (selector, chord = {}) => {
   const { strings: _strings } = { ...chord };
   const hasImg = useRef(false);
   const drawChord = () => {
-    const strings = _strings?.split(" ");
+    const strings = _strings?.split(' ');
     const filter = strings
       ?.map((e) => parseInt(e, 10))
       .filter((e) => !Number.isNaN(e));

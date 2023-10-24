@@ -1,1 +1,1 @@
-export { SearchChordsHeader } from "./header.component";
+export { SearchChordsHeader } from './header.component';

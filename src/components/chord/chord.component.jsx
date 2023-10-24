@@ -1,8 +1,8 @@
-import { useEffect } from "react";
-import { CONSTANTS } from "@constants";
-import { useSearchChordsDrawChord } from "@hooks";
-import styles from "./chord.module.css";
-import { setChordName } from "./chord.utils";
+import { useEffect } from 'react';
+import { CONSTANTS } from '@constants';
+import { useSearchChordsDrawChord } from '@hooks';
+import styles from './chord.module.css';
+import { setChordName } from './chord.utils';
 
 export function Chord({ chord }) {
   const { chordName, strings, voicingID } = { ...chord };

@@ -1,8 +1,8 @@
-import { useContext } from "react";
-import { Chord } from "@components";
-import { SearchChordsContext } from "@contexts";
-import { TRANSLATIONS } from "@translations";
-import styles from "./chords.module.css";
+import { useContext } from 'react';
+import { Chord } from '@components';
+import { SearchChordsContext } from '@contexts';
+import { TRANSLATIONS } from '@translations';
+import styles from './chords.module.css';
 
 export function Chords({ chords }) {
   return (

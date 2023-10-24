@@ -1,7 +1,7 @@
-import { useContext } from "react";
-import { SearchChordsContext } from "@contexts";
-import { TRANSLATIONS } from "@translations";
-import styles from "./logo.module.css";
+import { useContext } from 'react';
+import { SearchChordsContext } from '@contexts';
+import { TRANSLATIONS } from '@translations';
+import styles from './logo.module.css';
 
 export function Logo() {
   const { setChords, setVisible } = useContext(SearchChordsContext);

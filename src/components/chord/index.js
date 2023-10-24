@@ -1,1 +1,1 @@
-export { Chord } from "./chord.component";
+export { Chord } from './chord.component';

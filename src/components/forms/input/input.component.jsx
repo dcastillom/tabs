@@ -1,9 +1,9 @@
-import { useState } from "react";
-import { CONSTANTS } from "@constants";
-import { TRANSLATIONS } from "@translations";
-import styles from "./input.module.css";
+import { useState } from 'react';
+import { CONSTANTS } from '@constants';
+import { TRANSLATIONS } from '@translations';
+import styles from './input.module.css';
 
-export function Input({ type = "text", name = "", error = "", label = true }) {
+export function Input({ type = 'text', name = '', error = '', label = true }) {
   const [isDirty, setIsDirty] = useState(false);
   const hasError = isDirty && error;
   return (
