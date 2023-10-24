@@ -1,13 +1,12 @@
 import noResults from '@services/mocks/withNoResults.json';
 import results from '@services/mocks/withResults.json';
 import { render, screen } from '@testing-library/react';
-import { LABELS, TRANSLATIONS } from '@translations';
-import { lng } from '@translations/i18n';
+import { labels, translations, defaultLng } from '@translations';
 
 import { SearchChordsResults } from './chords.component';
 
 describe('Chords', () => {
-  const searchSomething = TRANSLATIONS[lng][LABELS.searchSomething];
+  const searchSomething = translations[defaultLng][labels.searchSomething];
 
   const renderComponent = (mock) =>
     render(<SearchChordsResults chords={mock} />);

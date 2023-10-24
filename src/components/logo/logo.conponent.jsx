@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { SearchChordsContext } from '@contexts';
-import { LABELS } from '@translations';
+import { labels } from '@translations';
 
 import styles from './logo.module.css';
 
@@ -19,7 +19,7 @@ export function Logo() {
       <a href="#" onClick={() => resetApp()} onKeyDown={() => resetApp()}>
         <div className={styles.logo} />
       </a>
-      <h1 className={styles.title}>{t(LABELS.guitarChords)}</h1>
+      <h1 className={styles.title}>{t(labels.guitarChords)}</h1>
     </div>
   );
 }

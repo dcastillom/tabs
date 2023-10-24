@@ -1,6 +1,6 @@
 import React, { useMemo, useRef, useState } from 'react';
 
-import { SearchChordsHeader, SearchChordsResults } from '@components';
+import { SearchChordsHeader, SearchChordsResults, LngSelector } from '@components';
 import { SearchChordsContext } from '@contexts';
 
 function App() {
@@ -21,6 +21,7 @@ function App() {
     <div>
       {visible && (
         <SearchChordsContext.Provider value={value}>
+          <LngSelector />
           <SearchChordsHeader />
           <SearchChordsResults chords={chords} />
         </SearchChordsContext.Provider>

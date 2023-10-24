@@ -5,7 +5,7 @@ import { SVGuitarChord } from 'svguitar';
 import { SearchChordsContext } from '@contexts';
 import { CHORD_PATTERN } from '@regExp';
 import { searchChords } from '@services';
-import { LABELS } from '@translations';
+import { labels } from '@translations';
 
 export const useSearchChords = () => {
   const { setChords } = useContext(SearchChordsContext);
@@ -24,16 +24,16 @@ export const useSearchChordsFormValidator = (
 ) => {
   const chordsPattern = new RegExp(CHORD_PATTERN);
   const [errors, setErrors] = useState({});
-  const searchConstant = LABELS.search;
+  const searchConstant = labels.search;
   const searchData = formData[searchConstant];
   const { t } = useTranslation();
   useEffect(() => {
     const err = {};
     if (isDirty && !searchData?.length) {
-      err[searchConstant] = t(LABELS.emptySearch);
+      err[searchConstant] = t(labels.emptySearch);
     }
     if (isDirty && searchData?.length && !chordsPattern.test(searchData)) {
-      err[searchConstant] = t(LABELS.wrongChordsPattern);
+      err[searchConstant] = t(labels.wrongChordsPattern);
     }
     err.hasErrors = Object.keys(err).length > 0;
     setErrors(err);
@@ -75,7 +75,7 @@ export const useSearchChordsDrawChord = (selector, chord = {}) => {
           })
           .draw();
       } catch (e) {
-        console.error(LABELS.noDrawChord);
+        console.error(labels.noDrawChord);
       }
       hasImg.current = true;
     }

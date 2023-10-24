@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { LABELS } from '@translations';
+import { labels } from '@translations';
 
 export function Form(props) {
   const {
@@ -47,7 +47,7 @@ export function Form(props) {
         {children}
         <input
           type="submit"
-          value={t(LABELS.submit)}
+          value={t(labels.submit)}
           disabled={errors.hasErrors}
         />
       </form>

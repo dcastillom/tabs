@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import { Chord } from '@components';
 import { SearchChordsContext } from '@contexts';
-import { LABELS } from '@translations';
+import { labels } from '@translations';
 
 import styles from './chords.module.css';
 
@@ -22,7 +22,7 @@ export function NoChords() {
   const { searchChordsIsDirty } = { ...useContext(SearchChordsContext) };
   const isDirty = searchChordsIsDirty?.current;
   const className = isDirty ? styles.noResults : styles.searchSomething;
-  const label = isDirty ? t(LABELS.noResults) : t(LABELS.searchSomething);
+  const label = isDirty ? t(labels.noResults) : t(labels.searchSomething);
   return <div className={className}>{label}</div>;
 }
 
