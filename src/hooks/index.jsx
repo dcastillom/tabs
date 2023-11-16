@@ -8,9 +8,10 @@ import { searchChords } from '@services';
 import { labels, lng } from '@translations';
 
 export const useSearchChords = () => {
-  const { setChords } = useContext(SearchChordsContext);
+  const { setChords, searchChordsIsDirty } = useContext(SearchChordsContext);
   const getChords = async (search) => {
     await searchChords(search).then((chords) => {
+      searchChordsIsDirty.current = true;
       setChords(chords);
     });
   };
@@ -18,8 +19,10 @@ export const useSearchChords = () => {
 };
 
 export const useResetApp = () => {
-  const { setChords, setVisible } = useContext(SearchChordsContext);
+  const { setChords, setVisible, searchChordsIsDirty } =
+    useContext(SearchChordsContext);
   const resetApp = () => {
+    searchChordsIsDirty.current = false;
     setChords([]);
     setVisible(false);
     setTimeout(() => setVisible(true), 0);
