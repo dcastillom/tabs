@@ -1,7 +1,7 @@
 export const INPUT_VARIANTS = {
-  outlined: 'outlined'
-}
+  outlined: 'outlined',
+};
 
 export const INPUT_TYPES = {
-  text: 'text'
-}
+  text: 'text',
+};

@@ -27,3 +27,8 @@ REQUIREMENTS
 - Form to search for chords, input and search button.
 - List of chords found, showing the image of the chord.
 - Show chords in a responsive grid.
+
+DEPLOYMENT
+
+https://vercel.com/daniel-castillos-projects
+https://tabs-virid.vercel.app/
