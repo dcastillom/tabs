@@ -46,6 +46,6 @@
   "description": "guitar chords",
   "main": "index.js",
   "repository": "https://github.com/dcastillom/tabs.git",
-  "author": "Daniel Castillo <d.castillo.marfull@accenture.com>",
+  "author": "Daniel Castillo <danielcastillomarfull@gmail.com>",
   "license": "MIT"
 }
